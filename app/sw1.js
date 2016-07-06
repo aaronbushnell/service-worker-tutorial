@@ -7,3 +7,8 @@ this.addEventListener('install', function (event) {
 this.addEventListener('activate', function (event) {
   console.log('The Service Worker has successfully activated!');
 });
+
+// Fire an event every time the browser attempts to fetch a resource
+this.addEventListener('fetch', function (event) {
+  console.log('Attempting to fetch:', event.request.url);
+});

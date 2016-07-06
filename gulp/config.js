@@ -4,6 +4,7 @@ let config = {
   assetsRelativeToTemplates: './',
   browserSync: {
     notify: false,
+    port: 4040,
     // Use the "server" option to browserSync an HTML site
     server: {
       baseDir: 'app'
