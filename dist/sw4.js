@@ -4,7 +4,7 @@
  */
 
 // Use a currentVersion variable so we can make modifications and allow the old Service Worker assets to be uncached
-let currentVersion = 'v1';
+let currentVersion = 'v20';
 
 this.addEventListener('install', function (event) {
   // Do not consider the Service Worker "installed" until the following event completes
@@ -47,9 +47,15 @@ this.addEventListener('activate', function (event) {
 this.addEventListener('fetch', function (event) {
   event.respondWith(
     // Determine if the request the browser is making exists in the cache
-    caches.match(event.request).then(function (response) {
-      // If it does, return it from the cache
-      return response;
+    caches.match(event.request).then(function (resp) {
+      // If it does, return it from the cache OR fetch it using the network
+      return resp || fetch(event.request).then(function (response) {
+        // AND THEN cache what was requested through the network into the Service Worker cache
+        return caches.open(currentVersion).then(function (cache) {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
     })
   );
 });
