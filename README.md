@@ -16,4 +16,4 @@ Service Workers can _only_ be utilized if the site is being served from `localho
 
 - [Service workers explained](https://github.com/slightlyoff/ServiceWorker/blob/master/explainer.md)
 - [Making a Simple Site Work Offline with ServiceWorker](https://ponyfoo.com/articles/simple-offline-site-serviceworker)
-= [Using Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers#Updating_your_service_worker)
+- [Using Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers#Updating_your_service_worker)
