@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "stylelint-statement-max-nesting-depth"
+  ],
+  "rules": {
+    "statement-max-nesting-depth": [ 1, { countAtRules: false } ],
+    "selector-no-id": true,
+    "number-leading-zero": "never",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "value-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "number-zero-length-no-unit": true,
+    "selector-pseudo-element-colon-notation": "double",
+    "indentation": 2,
+    "declaration-no-important": true
+  }
+}
